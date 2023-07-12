@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from nbadle.models import Player
 from django.http import JsonResponse
-
+# import 
 
 @api_view(['GET'])
 def get_76ers_players(request):
