@@ -9,7 +9,7 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'position', 'college', 'team')
+    list_display = ('name', 'team', 'position', 'ppg', 'apg', 'rpg', 'spg', 'bpg', 'mpg', 'tpg', 'offensive_rating', 'defensive_rating', 'height', 'weight', 'college')
     list_filter = ('team',)
     search_fields = ('name', 'team__name')
 
