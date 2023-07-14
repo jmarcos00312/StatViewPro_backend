@@ -15,6 +15,8 @@ class Player(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     college = models.CharField(max_length=100)
     img_url = models.URLField()
+    height = models.CharField(max_length=10)
+    weight = models.CharField(max_length=10)
     ppg = models.FloatField(default=0)
     apg = models.FloatField(default=0)
     rpg = models.FloatField(default=0)
@@ -22,10 +24,10 @@ class Player(models.Model):
     bpg = models.FloatField(default=0)
     mpg = models.FloatField(default=0)
     tpg = models.FloatField(default=0)
-    offensive_rating = models.FloatField(default=0)
-    defensive_rating = models.FloatField(default=0)
-    height = models.CharField(max_length=10)
-    weight = models.CharField(max_length=10)
+    fg_percent = models.FloatField(default=0)
+    three_pt_percent = models.FloatField(default=0)
+    ft_percent = models.FloatField(default=0)
+    fpg = models.FloatField(default=0)
     
     def __str__(self):
         return self.name

@@ -47,15 +47,17 @@ def import_players_from_excel(file_path):
         college = row['college']
         team_name = row['TEAM']
         img_url = row['player_img']
-        ppg = row['PPG'] or 0
-        apg = row['APG'] or 0
-        rpg = row['RPG']or 0
-        spg = row['SPG']or 0
-        bpg = row['BPG']or 0
-        mpg = row['MPG']or 0
-        tpg = row['TPG']or 0
-        offensive_rating = row['ORtg']or 0
-        defensive_rating = row['DRtg']or 0
+        ppg = row['PPG']  if row['PPG'] is not None else -1
+        apg = row['APG']  if row['APG'] is not None else -1
+        rpg = row['RPG']  if row['RPG'] is not None else -1
+        spg = row['SPG']  if row['SPG'] is not None else -1
+        bpg = row['BPG']  if row['BPG'] is not None else -1
+        mpg = row['MPG']  if row['MPG'] is not None else -1
+        tpg = row['TPG']  if row['TPG'] is not None else -1
+        fg_percent = row['fg_percent']  if row['fg_percent'] is not None else -1
+        three_pt_percent = row['three_pt_percent'] if row['three_pt_percent'] is not None else -1
+        ft_percent = row['ft_percent']  if row['ft_percent'] is not None else -1
+        fpg = row['fpg']  if row['fpg'] is not None else -1
         height = row['height']
         weight = row['weight']
         
@@ -74,20 +76,22 @@ def import_players_from_excel(file_path):
                         apg=apg,
                         rpg=rpg,
                         spg=spg,
+                        fg_percent=fg_percent,
+                        three_pt_percent=three_pt_percent,
+                        ft_percent=ft_percent,
+                        fpg=fpg,
                         bpg=bpg,
                         mpg=mpg,
                         tpg=tpg,
-                        offensive_rating=offensive_rating,
-                        defensive_rating=defensive_rating,
                         height=height,
                         weight=weight,
                     )
         print(player)
         player.save()
-        print(f"Player '{name}' added successfully.")
+        print(f"Player '{name}' added successfully to {team}")
 
-file_path = 'C:\\Users\\jerem\\OneDrive\\Desktop\\Book1.xlsx'
-import_players_from_excel(file_path)        
+file_path = 'C:\\Users\\jerem\\OneDrive\\Desktop\\merged_and_combined.xlsx'
+import_players_from_excel(file_path) 
 
 
 
