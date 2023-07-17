@@ -20,8 +20,10 @@ def get_76ers_players(request):
             'rpg': player.rpg,
             'spg': player.spg,
             'bpg': player.bpg,
-            'offensive_rating': player.offensive_rating,
-            'defensive_rating': player.defensive_rating,
+            'fg_percent': player.fg_percent,
+            'three_pt_percent': player.three_pt_percent,
+            'ft_percent': player.ft_percent,
+            'fpg': player.fpg,
             'height': player.height,
             'weight': player.weight,
         })
@@ -33,3 +35,6 @@ def get_all_players(request):
         'players': list(players.values())
     }
     return JsonResponse(data)
+
+def start_level_one(request):
+    pass
