@@ -1,6 +1,7 @@
 import sys
 import os
 import pandas as pd
+from nbadle.models import Team, Player
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
@@ -10,7 +11,6 @@ from django.conf import settings
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
 django.setup()
 
-from nbadle.models import Team, Player
 
 print('import_data.py is running')
 
