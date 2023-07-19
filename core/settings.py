@@ -29,7 +29,7 @@ DATABASE_URL = 'postgresql://postgres:qOEViPkqvJNTM9ZXBhV8@containers.railway.ap
 # SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+# DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
