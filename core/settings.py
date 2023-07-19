@@ -26,7 +26,7 @@ DATABASE_URL = 'postgresql://postgres:qOEViPkqvJNTM9ZXBhV8@containers.railway.ap
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # will create a .env file to store the key
-SECRET_KEY = config('SECRET_KEY')
+# SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
